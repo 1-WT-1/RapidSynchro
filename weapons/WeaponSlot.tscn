@@ -6,6 +6,8 @@
 
 [node name="SYSTEM_SYNCHRO_RAPID_L" parent="." index="36" instance_placeholder="res://RapidSynchro/weapons/rapid_synchro.tscn"]
 visible = false
+systemName = "SYSTEM_SYNCHRO_RAPID"
 
 [node name="SYSTEM_SYNCHRO_RAPID_R" parent="." index="37" instance_placeholder="res://RapidSynchro/weapons/rapid_synchro_r.tscn"]
 visible = false
+systemName = "SYSTEM_SYNCHRO_RAPID"

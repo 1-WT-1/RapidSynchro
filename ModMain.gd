@@ -48,33 +48,23 @@ var Rapid_Synchro_R = {
 	"alignment": "ALIGNMENT_RIGHT",
 	"equipment_type": "EQUIPMENT_SYNCHROTRONS"
 }
-#	"control":"ship_weapon_fire",
-#	"restriction": "HARDPOINT_LOW_STRESS"
+
 # Initialize the mod
 # This function is executed before the majority of the game is loaded
 # Only the Tool and Debug AutoLoads are available
 # Script and scene replacements should be done here, before the originals are loaded
 func _init(modLoader = ModLoader):
-
 	l("Initializing")
-	#loadDLC()
-	#addEquipment(Rapid_Synchro_L)
-	#addEquipment(Rapid_Synchro_R)
-	#replaceScene("weapons/rapid_synchro.gd")
-	#replaceScene("weapons/rapid_synchro.tscn")
-	#replaceScene("weapons/rapid_synchro_r.tscn")
 	replaceScene("weapons/WeaponSlot.tscn")
 	addEquipment(Rapid_Synchro_L)
 	addEquipment(Rapid_Synchro_R)
 	updateTL("i18n/en.txt", "|")
 	l("Initialized")
 
-
 # Do stuff on ready
 # At this point all AutoLoads are available and the game is loaded
 func _ready():
 	l("Readying")
-	
 	l("Ready")
 	
 # Helper script to load translations using csv format

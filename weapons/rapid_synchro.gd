@@ -8,7 +8,7 @@ export var repairFixTime = 12
 export var powerDraw = 469000.0
 export var power = 93800.0
 export var maxCharge = 56500.0 
-export var discharge = 25000.0
+#export var discharge = 55000.0
 #export var minCharge = 2250.0 #unused
 export var maxStormCharge = 56500
 export var maxStorms = 1
@@ -33,7 +33,7 @@ export (float, 0, 1, 0.05) var empPart = 0.4
 export (float, 0, 1, 0.05) var lingeringPart = 0.05
 
 # Cooldown
-export var maxCycle = 20.0
+export var maxCycle = 21.0
 export var cycleIncrement = 1.0
 export var cycleDecrement = 1.5
 export var overheatCycleDecrement = 0.5
@@ -45,8 +45,8 @@ export (float, 0.0, 1.0, 0.05) var decayFloorFactor = 0.8
 export var sparkStartCycle = 1.0
 export var sparkMaxCycle = 15.0
 export var sparkCurveExponent = 0.2
-const SPARK_AUDIO_STOP_THRESHOLD = 0.5
-const overheatSparkMultiplier = 1.25
+const SPARK_AUDIO_STOP_THRESHOLD = 0.25
+const overheatSparkMultiplier = 1.05
 export var overheatSpikeOffset = 5.0
 export var overheatSpikeFadeCycles = 20.0
 
@@ -164,7 +164,7 @@ func _physics_process(delta):
 			_is_overheated = false
 	elif not _is_charging:
 		current_cycle_decrement_rate = cycleDecrement
-		charge = clamp(charge - discharge * delta, 0, maxCharge)
+		charge = 0 #clamp(charge - discharge * delta, 0, maxCharge)
 	
 	if current_cycle_decrement_rate > 0.0:
 		cycle = max(cycle - current_cycle_decrement_rate * delta, 0.0)
@@ -374,9 +374,9 @@ func _update_audio(delta):
 	elif _is_overheated and cycle > 0.01:
 		should_audio_charge_be_playing = true
 		target_pitch = 0.1 + pow(_final_shader_bias_for_audio, 1.5) * (pitchScale - 0.1)
-	elif not _is_charging and not _is_overheated and current_spark_bias > SPARK_AUDIO_STOP_THRESHOLD :
+	elif not _is_charging and not _is_overheated and _final_shader_bias_for_audio > SPARK_AUDIO_STOP_THRESHOLD :
 		should_audio_charge_be_playing = true
-		target_pitch = 0.1 + pow(current_spark_bias, 1.5) * (pitchScale - 0.1)
+		target_pitch = 0.1 + pow(_final_shader_bias_for_audio, 1.5) * (pitchScale - 0.1)
 	
 	target_pitch = max(target_pitch, 0.01)
 
