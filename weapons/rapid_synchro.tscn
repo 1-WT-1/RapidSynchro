@@ -1,0 +1,165 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://sfx/LigtningArc.shader" type="Shader" id=1]
+[ext_resource path="res://sfx/loop_noise.png" type="Texture" id=2]
+[ext_resource path="res://weapons/weapons.material" type="Material" id=3]
+[ext_resource path="res://weapons/laser_flare.png" type="Texture" id=4]
+[ext_resource path="res://ships/tnrtl-engine_01.wav" type="AudioStream" id=5]
+[ext_resource path="res://lights/distant-proxy.png" type="Texture" id=6]
+[ext_resource path="res://weapons/weapons-n.png" type="Texture" id=7]
+[ext_resource path="res://weapons/weapons-c.png" type="Texture" id=8]
+[ext_resource path="res://weapons/mass_driver_02.wav" type="AudioStream" id=9]
+[ext_resource path="res://weapons/laser_beam_tight.png" type="Texture" id=10]
+[ext_resource path="res://weapons/projectiles/stormDischarge.tscn" type="PackedScene" id=11]
+[ext_resource path="res://RapidSynchro/weapons/rapid_synchro.gd" type="Script" id=12]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/timeOffset = 0.0
+shader_param/noiseSpeed = Vector3( 0.41, 0.79, 0.802 )
+shader_param/speed = 0.1
+shader_param/realtime = 0.03
+shader_param/valueOffset = 0.5
+shader_param/valueScale = 4.0
+shader_param/scale = Vector2( 2.041, 8192 )
+shader_param/minVal = 0.0
+shader_param/maxVal = 0.018
+shader_param/regionScale = Vector2( 1, 1 )
+shader_param/fadeout = 1.0
+shader_param/bright = Color( 1, 1.43137, 3.72157, 0.0980392 )
+shader_param/dark = Color( 0.695801, 0, 0, 0 )
+shader_param/focus = 0.784
+shader_param/fade = 2.0
+shader_param/fadePixels = 64.0
+shader_param/noiseMap = ExtResource( 2 )
+
+[sub_resource type="Gradient" id=3]
+colors = PoolColorArray( 0, 0, 0, 1, 1, 0.784314, 0.784314, 0.0509804 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[node name="rapid_synchro" type="Sprite"]
+light_mask = 524289
+material = ExtResource( 3 )
+scale = Vector2( 0.8, 0.8 )
+z_index = 4
+texture = ExtResource( 8 )
+normal_map = ExtResource( 7 )
+offset = Vector2( -48, 150 )
+region_enabled = true
+region_rect = Rect2( 1903, 127, 139, 305 )
+script = ExtResource( 12 )
+systemName = "SYSTEM_SYNCHRO_RAPID_L"
+stormScene = ExtResource( 11 )
+
+[node name="AudioCharge" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -5.0
+pitch_scale = 4.0
+bus = "ShipBowels"
+
+[node name="AudioFire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -5.0
+pitch_scale = 0.25
+bus = "SFX"
+
+[node name="EditorLight" type="Light2D" parent="."]
+position = Vector2( -358, -327 )
+editor_only = true
+texture = ExtResource( 6 )
+texture_scale = 4.0
+energy = 2.21
+range_height = 1638.4
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BeamCore" type="Sprite" parent="."]
+visible = false
+modulate = Color( 5, 5, 5, 1 )
+self_modulate = Color( 1, 1, 1, 0.0588235 )
+light_mask = 0
+material = SubResource( 1 )
+scale = Vector2( 1.25, 1.25 )
+texture = ExtResource( 10 )
+
+[node name="Sparks1" type="Sprite" parent="."]
+visible = false
+light_mask = 0
+material = SubResource( 2 )
+rotation = 3.14159
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+texture = SubResource( 4 )
+centered = false
+offset = Vector2( -1024, -64 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2048, 8192 )
+
+[node name="Sparks2" type="Sprite" parent="."]
+visible = false
+light_mask = 0
+material = SubResource( 2 )
+rotation = 3.14159
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+texture = SubResource( 4 )
+centered = false
+offset = Vector2( -1024, -64 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2048, 8192 )
+
+[node name="Sparks3" type="Sprite" parent="."]
+visible = false
+light_mask = 0
+material = SubResource( 2 )
+rotation = 3.14159
+scale = Vector2( 0.8, 0.8 )
+z_index = -1
+texture = SubResource( 4 )
+centered = false
+offset = Vector2( -1024, -64 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2048, 8192 )
+
+[node name="Flare" type="Light2D" parent="."]
+visible = false
+position = Vector2( -2.66667, -2.22222 )
+texture = ExtResource( 4 )
+texture_scale = 3.0
+color = Color( 0.313726, 0.627451, 1, 1 )
+energy = 15.0
+range_height = 20.0
+range_z_min = -4096
+range_z_max = 4096
+
+[node name="sprite2" type="Sprite" parent="."]
+light_mask = 524289
+material = ExtResource( 3 )
+use_parent_material = true
+position = Vector2( 51.1111, -72.2222 )
+scale = Vector2( 1.1, 1.1 )
+z_index = -1
+texture = ExtResource( 8 )
+normal_map = ExtResource( 7 )
+offset = Vector2( -48, 150 )
+region_enabled = true
+region_rect = Rect2( 991.376, 239.877, 64.3352, 166.748 )
+
+[node name="sprite5" type="Sprite" parent="."]
+light_mask = 524289
+material = ExtResource( 3 )
+use_parent_material = true
+position = Vector2( 0, 6.25 )
+scale = Vector2( 1.25, 1.25 )
+z_index = -1
+texture = ExtResource( 8 )
+normal_map = ExtResource( 7 )
+offset = Vector2( -48, 150 )
+region_enabled = true
+region_rect = Rect2( 1903, 196.537, 139, 235.463 )

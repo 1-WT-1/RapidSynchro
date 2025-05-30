@@ -1,0 +1,11 @@
+locale|en
+
+SYSTEM_SYNCHRO_RAPID|Staccato Particle Projector
+
+SYSTEM_SYNCHRO_RAPID_DESC|The Staccato Particle Projector is an Omaewamou-Shindeiru design that re-engineers conventional synchrotron function for rapid, sequential ejections. Instead of a prolonged buildup for a single high-energy pulse, the Staccato utilizes a high-frequency resonant cavity injector synchronized with a rapidly cycling magnetic deflection system. This allows for the continuous acceleration and ejection of smaller, discrete particle packets at a high repetition rate. though at a lower terminal velocity compared to single-shot collider designs. \n\nThis intense operational mode subjects the accelerator's core components to extreme cyclic stresses. As these stresses accumulate with sustained fire, energy containment becomes less coherent, manifesting as visible arcing and parasitic plasma discharges from the weapon casing. To prevent irreversible damage from exceeding material tolerances, an automated regulation system will force a temporary shutdown and re-stabilization cycle if operational limits are breached. This weapon is restricted in densely populated systems due to its high energy signature and operational demands. Enceladus Prime has not yet finalized specific regulations.
+
+SYSTEM_SYNCHRO_RAPID_SPEC|Power consumption: 469 MW \nMaximum charge:: 56.25 MJ \nRate of fire: 1.66 pps \nProjectile velocity: 260,730 km/s \nProjectile mass: 0.61 µg \nOperational characteristic: Sustained fire strains system. \nMounting Location: Side-mounts only \nMass: 26,250 kg \nManufacturer: Omaewamou-Shindeiru
+
+SYSTEM_SYNCHRO_RAPID_MANUAL|Deals kinetic, thermal and electromagnetic damage. \nContinuously ejects particle packets while trigger is active.\nSustained fire causes accelerator strain; critical levels force a system reset. \nCan leave residual charge in the rings. 
+
+RAPIDSYNCHRO_MOD_DESCRIPTION|Adds new fast firing SPC weapon "Stacatto"
