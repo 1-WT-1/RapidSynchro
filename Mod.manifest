@@ -2,10 +2,10 @@
 
 id="wt.RapidSynchro"
 name="RapidSynchro"
-version="1.0.0"
+version="1.0.2"
 version_major=1
 version_minor=0
-version_bugfix=0
+version_bugfix=2
 version_metadata=""
 description="RAPIDSYNCHRO_MOD_DESCRIPTION"
 group="equipment"

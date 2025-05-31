@@ -95,12 +95,12 @@ func _ready():
 		s.material = s.material.duplicate()
 		timeOffsets.append(randf() * 60.0)
 
-#	ray = Vector2(0, -maxDistance)
+	ray = Vector2(0, -maxDistance)
 #
-#	flare.visible = false
-#	beamCore.visible = false
-#	for s in sparks:
-#		s.visible = false
+	flare.visible = false
+	beamCore.visible = false
+	for s in sparks:
+		s.visible = false
 
 func fire(p: float):
 	firepower = clamp(p, 0.0, 1.0)
