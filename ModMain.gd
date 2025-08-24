@@ -10,45 +10,6 @@ var modPath:String = get_script().resource_path.get_base_dir() + "/"
 # Required var for the replaceScene() func to work
 var _savedObjects := []
 
-# Instances the equipment pointer for use with addEquipment. 
-# Adding it here means it won't need to be loaded multiple times
-# This saves on both loading speed and on memory usage 
-var Equipment = preload("res://HevLib/pointers/Equipment.gd")
-
-var ADD_EQUIPMENT_ITEMS = [] # Variable detected by HevLib to add equipment. Any properly added item will be added to slots via the set values
-
-# Helper function to make the adding of multiple equipment items more streamlined
-func addEquipment(item_data: Dictionary):
-	#var item = Equipment.__make_equipment(equipment_dictionary)
-	ADD_EQUIPMENT_ITEMS.append(item_data)
-
-
-var Rapid_Synchro_L = {
-	"system": "SYSTEM_SYNCHRO_RAPID_L",
-	"name_override": "SYSTEM_SYNCHRO_RAPID", 
-	"description": "SYSTEM_SYNCHRO_RAPID_DESC",
-	"specs": "SYSTEM_SYNCHRO_RAPID_SPEC",
-	"manual": "SYSTEM_SYNCHRO_RAPID_MANUAL",
-	"warn_if_electric_below":469,
-	"price": 472999,
-	"slot_type": "HARDPOINT",
-	"alignment": "ALIGNMENT_LEFT",
-	"equipment_type": "EQUIPMENT_SYNCHROTRONS"
-}
-
-var Rapid_Synchro_R = {
-	"system": "SYSTEM_SYNCHRO_RAPID_R",
-	"name_override": "SYSTEM_SYNCHRO_RAPID", 
-	"description": "SYSTEM_SYNCHRO_RAPID_DESC",
-	"specs": "SYSTEM_SYNCHRO_RAPID_SPEC",
-	"manual": "SYSTEM_SYNCHRO_RAPID_MANUAL",
-	"warn_if_electric_below":469,
-	"price": 472999,
-	"slot_type": "HARDPOINT",
-	"alignment": "ALIGNMENT_RIGHT",
-	"equipment_type": "EQUIPMENT_SYNCHROTRONS"
-}
-
 # Initialize the mod
 # This function is executed before the majority of the game is loaded
 # Only the Tool and Debug AutoLoads are available
@@ -56,8 +17,6 @@ var Rapid_Synchro_R = {
 func _init(modLoader = ModLoader):
 	l("Initializing")
 	replaceScene("weapons/WeaponSlot.tscn")
-	addEquipment(Rapid_Synchro_L)
-	addEquipment(Rapid_Synchro_R)
 	updateTL("i18n/en.txt", "|")
 	l("Initialized")
 
