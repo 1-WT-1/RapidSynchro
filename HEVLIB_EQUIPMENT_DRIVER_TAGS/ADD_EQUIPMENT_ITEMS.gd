@@ -1,5 +1,3 @@
-extends Node
-
 const Rapid_Synchro_L = {
     "system": "SYSTEM_SYNCHRO_RAPID_L",
     "name_override": "SYSTEM_SYNCHRO_RAPID",
@@ -10,8 +8,9 @@ const Rapid_Synchro_L = {
     "price": 472999,
     "slot_type": "HARDPOINT",
     "alignment": "ALIGNMENT_LEFT",
-    "equipment_type": "EQUIPMENT_SYNCHROTRONS"
-        }
+    "equipment_type": "EQUIPMENT_SYNCHROTRONS",
+    "weapon_slot": {"path": "res://RapidSynchro/weapons/rapid_synchro.tscn"}
+}
 
 const Rapid_Synchro_R = {
     "system": "SYSTEM_SYNCHRO_RAPID_R",
@@ -23,5 +22,6 @@ const Rapid_Synchro_R = {
     "price": 472999,
     "slot_type": "HARDPOINT",
     "alignment": "ALIGNMENT_RIGHT",
-    "equipment_type": "EQUIPMENT_SYNCHROTRONS"
-        }
+    "equipment_type": "EQUIPMENT_SYNCHROTRONS",
+    "weapon_slot": {"path": "res://RapidSynchro/weapons/rapid_synchro_r.tscn"}
+}

@@ -1,14 +1,38 @@
-[package]
+[mod_information]
 
-id="wt.RapidSynchro"
 name="RapidSynchro"
-version="1.1.2"
-version_major=1
-version_minor=1
-version_bugfix=2
-version_metadata=""
+id="wt.RapidSynchro"
 description="RAPIDSYNCHRO_MOD_DESCRIPTION"
-group="equipment"
-github_homepage="https://github.com/1-WT-1/RapidSynchro"
-github_releases="https://github.com/1-WT-1/RapidSynchro/releases"
-discord_thread="https://discord.com/channels/426287934870781952/1378042881897529446"
+author="WT"
+
+[version]
+
+version_major=1
+version_minor=2
+version_bugfix=0
+
+[tags]
+
+TAG_ADDS_EQUIPMENT={
+"type": "array",
+"value": [ "RAPIDSYNCHRO" ]
+}
+
+[links]
+
+HEVLIB_GITHUB={
+"URL": "https://github.com/1-WT-1/RapidSynchro"
+}
+HEVLIB_DISCORD={
+"URL": "https://discord.com/channels/426287934870781952/1378042881897529446"
+}
+
+[manifest_definitions]
+
+manifest_version=2.2
+dependancy_mod_ids=[ {
+"blocking": true,
+"mod_id": "hev.LIBRARY"
+} ]
+manifest_url="https://raw.githubusercontent.com/1-WT-1/RapidSynchro/refs/heads/main/Mod.manifest"
+changelog_path="changelog.txt"

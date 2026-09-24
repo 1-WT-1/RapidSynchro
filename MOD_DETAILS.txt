@@ -1,0 +1,11 @@
+;MOD_ID|wt.RapidSynchro
+;MOD_NAME|Rapid Synchrotrons
+;MOD_ZIP_NAME|RapidSynchro.zip
+
+[center][b]Rapid Synchrotrons[/b][/center]
+
+Equipment mod for ΔV: Rings of Saturn.
+
+[b]What if SPC Gungnir fired quickly?[/b]
+
+This mod introduces such weapon "Stacatto" - that fires rapid bursts of smaller particle packets. Sustained fire causes system strain, eventually forcing a temporary shutdown. Handle with care.

@@ -1,0 +1,20 @@
+[1.2.0]
+
+1="* Converted to modlet"
+2="* Switched translations to HevLib's translation driver"
+3="* Reduced memory usage of driver files"
+4="* Added 3-Clause BSD NON-AI license"
+5="* Added MOD_DETAILS.txt"
+6="* Added blocking HevLib dependency check"
+
+[1.1.2]
+1="* Updated to use latest HevLib"
+
+[1.0.2]
+1="* Fixed beam collisions to prevent shooting neutrinos"
+
+[1.0.1]
+1="* Bug fixes"
+
+[1.0.0]
+1="* Initial release"
