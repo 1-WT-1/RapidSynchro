@@ -53,7 +53,6 @@ offset = Vector2( -48, 150 )
 region_enabled = true
 region_rect = Rect2( 1903, 127, 139, 305 )
 script = ExtResource( 12 )
-systemName = "SYSTEM_SYNCHRO_RAPID_L"
 stormScene = ExtResource( 11 )
 
 [node name="AudioCharge" type="AudioStreamPlayer" parent="."]

@@ -5,7 +5,6 @@
 [node name="rapid_synchro" instance=ExtResource( 1 )]
 offset = Vector2( 48, 150 )
 flip_h = true
-systemName = "SYSTEM_SYNCHRO_RAPID_R"
 
 [node name="sprite5" parent="." index="9"]
 offset = Vector2( 48, 150 )

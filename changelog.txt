@@ -1,3 +1,6 @@
+[1.2.1]
+1="* Fixed weapon displaying raw system name instead of translated name in HUD and menus"
+
 [1.2.0]
 
 1="* Converted to modlet"
